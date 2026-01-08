@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <p><strong>MiguelDev</strong></p>
+        </div>
+        <button class="hamburguesa" id="btn-menu">☰</button>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Sobre Mi</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Si Jehova quiere... Bienvenido a mi futuro</h1>
+        <p>Desarrollando soluciones web modernas y escalables</p>
+        <a class="boton" href="#">Ver Proyectos</a>
+    </section>
+
+    <section class="proyectos" id="proyectos">
+        <h2>Mis Proyectos Recientes</h2>
+        <div class="galeria">
+            <div class="tarjeta-proyecto">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                    alt="Proyecto 1">
+                <h3>E-commerce Web</h3>
+            </div>
+
+            <div class="tarjeta-proyecto">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                    alt="Proyecto 1">
+                <h3>E-commerce Web</h3>
+            </div>
+
+            <div class="tarjeta-proyecto">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                    alt="Proyecto 1">
+                <h3>E-commerce Web</h3>
+            </div>
+
+            <div class="tarjeta-proyecto">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                    alt="Proyecto 1">
+                <h3>E-commerce Web</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <h2>Contactame</h2>
+        <form>
+            <input type="text" placeholder="Tu Nombre" id="nombre">
+            <input type="email" placeholder="Tu Correo" id="correo">
+            <textarea placeholder="Escribe tu mensaje aqui..."></textarea>
+            <button class="boton" type="button" id="btn-enviar">Enviar Mensaje</button>
+            <p id="mensaje-respuesta"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MiguelDev. Todos los derechos reservados.</p>
+
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Linkedin</a>
+            <a href="#">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        const botonMenu = document.getElementById('btn-menu');
+        const menuNavegacion = document.querySelector('nav');
+
+        botonMenu.addEventListener('click', function () {
+            menuNavegacion.classList.toggle('activado');
+        })
+
+        const enlacesMenu = document.querySelectorAll('nav a');
+        enlacesMenu.forEach(enlace => {
+            enlace.addEventListener('click', function () {
+                menuNavegacion.classList.remove('activado');
+            });
+        });
+
+        const boton = document.getElementById('btn-enviar');
+        const parrafoRespuesta = document.getElementById('mensaje-respuesta')
+        boton.addEventListener('click', function () {
+            const nombreUsuario = document.getElementById('nombre').value;
+            const correoUsuario = document.getElementById('correo').value;
+
+            if (nombreUsuario === "" || correoUsuario === "") {
+                parrafoRespuesta.textContent = "Error: Faltan datos obligatorios.";
+                parrafoRespuesta.style.color = "red";
+            } else {
+                parrafoRespuesta.textContent = "¡Mensaje enviado correctamente!";
+                parrafoRespuesta.style.color = "green";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
