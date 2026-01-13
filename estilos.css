@@ -198,3 +198,19 @@ footer {
         width: 100%;
     }
 }
+
+/* --- Arreglo para las imágenes de los proyectos --- */
+.tarjeta-proyecto img {
+    width: 80%;
+    /* Reduce el ancho al 80% del contenedor */
+    height: auto;
+    /* ¡IMPORTANTE! Mantiene la proporción para que no se deforme */
+    display: block;
+    /* Permite centrarla */
+    margin: 0 auto 15px auto;
+    /* Centra horizontalmente y da espacio abajo */
+    border-radius: 8px;
+    /* Opcional: le da bordes redondeados suaves */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Opcional: una sombra ligera */
+}
